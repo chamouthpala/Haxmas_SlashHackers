@@ -29,7 +29,8 @@ export default class VoiceRec extends React.Component {
     AudioRecord.init(options);
 
     AudioRecord.on('data', data => {
-      const chunk = Buffer.from(data, 'base64');
+      //const chunk = Buffer.from(data, 'base64');
+      const chunk = Buffer.from(data).toString('base64');
       console.log('chunk size',  chunk);
       this.setState({audioData:chunk})
       // do something with audio chunk

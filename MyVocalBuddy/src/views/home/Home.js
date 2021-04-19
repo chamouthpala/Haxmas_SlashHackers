@@ -31,7 +31,8 @@ const Home = ({ navigation }) => (
             <Button
                 title="Identify Stuttering"
                 color="#396F81"
-                onPress={() => Alert.alert('Button with adjusted color pressed')}
+                onPress={() => (
+                    navigation.navigate("VoiceRec"))}
             />
         </View>
         <Separator />
@@ -39,7 +40,7 @@ const Home = ({ navigation }) => (
             <Button
                 title="Monitor Patients Current Progress"
                 color="#3E999E"
-                onPress={(e) => Alert.alert('Cannot press this one')}
+                onPress={(e) => Alert.alert('Work On progress')}
             />
         </View>
         <Separator />
@@ -47,7 +48,7 @@ const Home = ({ navigation }) => (
             <Button
                 title="Patients Personal Details"
                 color="#54BD8A"
-                onPress={() => Alert.alert('Cannot press this one')}
+                onPress={() => Alert.alert('Work On progress')}
             />
         </View>
         <Separator />
@@ -55,7 +56,8 @@ const Home = ({ navigation }) => (
             <Button
                 title="Tutorials"
                 color="#32CDA8"
-                onPress={() => Alert.alert('Cannot press this one')}
+                onPress={() => (
+                    navigation.navigate("Tutorial"))}
             />
         </View>
         <Separator />
@@ -72,7 +74,8 @@ const Home = ({ navigation }) => (
             <Button
                 title="Log out"
                 color="#33DCD2"
-                onPress={(e) => Alert.alert('Cannot press this one')}
+                onPress={() => (
+                    navigation.navigate("SignIn"))}
             />
         </View>
         <Separator />

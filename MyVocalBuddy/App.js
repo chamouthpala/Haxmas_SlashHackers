@@ -8,6 +8,8 @@ import SignInScreen from './src/views/sign-in/SignIn';
 import VoiceRecScreen from './src/views/voiceRec/VoiceRec';
 import SignUpScreen from './src/views/sign-up/SignUp';
 import RecorderScreen from './src/views/recorder/Recorder';
+import LoadingScreen from './src/views/Loading/loading';
+import TutorialScreen from './src/views/tutorial/tutorial';
 // import VoiceRecScreen from './src/views/voiceRec/voiceRec';
 import 'react-native-gesture-handler';
 // import { createStackNavigator, createAppContainer } from "react-navigation";
@@ -26,6 +28,8 @@ export default function App() {
         <Stack.Screen name="SignIn" component={SignInScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen name="VoiceRec" component={VoiceRecScreen} />
+        <Stack.Screen name="Loading" component={LoadingScreen} />
+        <Stack.Screen name="Tutorial" component={TutorialScreen} />
         {/* <Stack.Screen name="Recorder" component={RecorderScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
