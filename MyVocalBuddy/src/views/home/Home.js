@@ -55,7 +55,8 @@ const Home = ({ navigation }) => (
             <Button
                 title="Tutorials"
                 color="#32CDA8"
-                onPress={() => Alert.alert('Cannot press this one')}
+                onPress={() => (
+                    navigation.navigate("Tutorials"))}
             />
         </View>
         <Separator />

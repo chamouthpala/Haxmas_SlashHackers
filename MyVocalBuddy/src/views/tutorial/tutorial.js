@@ -5,7 +5,8 @@ const Separator = () => (
   <View style={styles.separator} />
 );
 
-const App = () => (
+const Tutorials = ({ navigation }) => (
+// const App = () => (
   <SafeAreaView style={styles.container}>
     <View>
       <Text style={[styles.title1,styles.setColorB,styles.setFontSize]}>
@@ -62,7 +63,10 @@ const App = () => (
       <Button
         title="Tutorial 5"
         color="#19EEE1"
-        onPress={() => Alert.alert('Cannot press this one')}
+       
+        onPress={() => (
+          navigation.navigate("About"))}
+        
       />
     </View>
     <Separator />
@@ -106,3 +110,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
