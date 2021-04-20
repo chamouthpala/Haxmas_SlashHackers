@@ -6,12 +6,15 @@ const Separator = () => (
 );
 
 const Home = ({ navigation }) => (
+    
+    
    
     <SafeAreaView style={styles.container}>
         
         <View>
             <Text style={[styles.title1, styles.setColorLBlue]}>
-                aaaaaaaaaaa
+                Type :{ this.state.data.approvedTime }
+                
       </Text>
         </View>
         <Separator />
