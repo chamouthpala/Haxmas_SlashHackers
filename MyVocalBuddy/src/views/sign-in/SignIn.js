@@ -53,7 +53,7 @@ fetch(APP_DOMAIN + "login", {
 }
 
 const handleGuestSubmit = () => {
-  navigation.navigate("Home");
+  navigation.navigate("SignUp");
 }
         
         
@@ -67,8 +67,8 @@ return (
    
     <View style={styles.inputView}>
     <View style={styles.inputViewOne}>
-      <TextInput>Text</TextInput>
-      <TextInput>Text</TextInput>
+      <TextInput>LOG</TextInput>
+      <TextInput>IN</TextInput>
       </View>
       <Input
         style={styles.TextInput}

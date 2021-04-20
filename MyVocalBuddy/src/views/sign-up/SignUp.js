@@ -18,6 +18,7 @@ const [fullName, setFullName] = useState("");
 const [age, setAge] = useState("");
 const [gender, setGender] = useState("");
 const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
 const [errorText,setErrorText] = useState("");
 const [loading, setLoading] = useState(false);
 
@@ -39,8 +40,12 @@ if(!email){
     alert('Please Fill your email');
     return;
   }
+if(!password){
+    alert('Please Fill your password');
+    return;
+  }
 setLoading(true);
-let obj = {fullName: fullName, age: age, gender: gender, email:email};
+let obj = {fullName: fullName, age: age, gender: gender, email:email, password:password};
 console.log(obj);
 navigation.navigate("Home")
 fetch(APP_DOMAIN + "login", {
@@ -79,8 +84,8 @@ return (
    
     <View style={styles.inputView}>
     <View style={styles.inputViewOne}>
-      <TextInput>Text</TextInput>
-      <TextInput>Text</TextInput>
+      <TextInput>SIGN</TextInput>
+      <TextInput>UP</TextInput>
       </View>
       {/* <Input
         style={styles.TextInput}
@@ -125,6 +130,14 @@ return (
                     autoCapitalize="none"
                     placeholderTextColor='#B1A2A2'
                     onChangeText={(email) => setEmail(email)}
+                />
+                <Input
+                    style={styles.TextInput}
+                    placeholder='Password'
+                    autoCapitalize="none"
+                    placeholderTextColor='#B1A2A2'
+                    secureTextEntry={true}
+                    onChangeText={(email) => setPassword(password)}
                 />
       {/* <TouchableOpacity>
       <Text onPress={handleGuestSubmit}>Forgot Password</Text>
