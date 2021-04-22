@@ -6,6 +6,7 @@ import Sound from 'react-native-sound';
 import AudioRecord from 'react-native-audio-record';
 import { Icon, ListItem, Input, Header, Text, Divider } from 'react-native-elements';
 import { APP_DOMAIN } from '../../util/Constants';
+import base64 from 'react-native-base64';
  
 export default class VoiceRec extends React.Component {
   sound = null;
@@ -26,19 +27,36 @@ export default class VoiceRec extends React.Component {
       wavFile: 'test.wav'
     };
 
+    let str=''
+
     AudioRecord.init(options);
 
     AudioRecord.on('data', data => {
       //const chunk = Buffer.from(data, 'base64');
-      const chunk = Buffer.from(data).toString('base64');
-      console.log('chunk size',  chunk);
-      this.setState({audioData:chunk})
+      // const chunk = Buffer.from(data).toString('base64');
+    
+      str +=   base64.encode(data);
+      // console.log('chunk size',  chunk);
+      // console.log('chunk size',  base64.encode(data), str);
+      this.setState({audioData:str})
       // do something with audio chunk
     });
   }
-
+   toBase64 = file => new Promise((resolve, reject) => {
+     console.log("FIKE.",file)
+     
+    const reader = new FileReader(file);
+    reader.readAsDataURL(file);
+    console.log("FIKE",file)
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
   handleSubmit = async() =>{
-    alert('SUBMITTT');
+    // let file= new File([""], this.state.audioFile)
+    // console.log("NNNN0",file)
+    alert('SUBMITTT'); 
+    // let data = await this.toBase64(file)
+    console.log("DATA", this.state.audioData)
     fetch(APP_DOMAIN + "voicerecord", {
         method: "POST",
         headers: {
@@ -46,7 +64,7 @@ export default class VoiceRec extends React.Component {
         'Content-Type': 'application/json',
       },
         body: JSON.stringify({
-            "voicenote": this.state.audioData
+            voicenote: this.state.audioData
         })
     })
         .then(res => {
@@ -81,7 +99,7 @@ export default class VoiceRec extends React.Component {
     if (!this.state.recording) return;
     console.log('stop record');
     let audioFile = await AudioRecord.stop();
-    console.log('audioFile', typeof audioFile);
+    console.log('audioFile', typeof audioFile, audioFile);
     this.setState({ audioFile, recording: false });
   };
 
