@@ -10,6 +10,7 @@ import SignUpScreen from './src/views/sign-up/SignUp';
 import LoadingScreen from './src/views/Loading/loading'
 import TutorialScreen from './src/views/tutorial/tutorial';
 import RecorderScreen from './src/views/recorder/Recorder';
+import Screen from './src/views/Screen/screen';
 import TuteOneScreen from './src/views/tuteOne/tuteOne';
 import TuteTwoScreen from './src/views/tuteTwo/tuteTwo';
 import TuteThreeScreen from './src/views/tuteThree/tuteThree';
