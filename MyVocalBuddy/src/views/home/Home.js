@@ -57,11 +57,7 @@ const Home = ({ navigation }) => (
                 title="Tutorials"
                 color="#32CDA8"
                 onPress={() => (
-<<<<<<< HEAD
-                    navigation.navigate("Tutorials"))}
-=======
                     navigation.navigate("Tutorial"))}
->>>>>>> a83c544ff540ac2892221c75bbe5738716b06b2a
             />
         </View>
         <Separator />
